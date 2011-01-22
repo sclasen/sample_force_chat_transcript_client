@@ -1,12 +1,16 @@
 <web-app>
-  <!-- Servlet class taken from first :aot namespace -->
-  <servlet>
-     <servlet-name>compojure-war-example</servlet-name>
-     <servlet-class>deploy.servlet</servlet-class>
-  </servlet>
-  <!-- Servlet is mapped to / by default  -->
-  <servlet-mapping>
-     <servlet-name>compojure-war-example</servlet-name>
-     <url-pattern>/*</url-pattern>
-  </servlet-mapping>
+    <!-- Servlet class taken from first :aot namespace -->
+    <servlet>
+        <servlet-name>compojure-war-example</servlet-name>
+        <servlet-class>deploy.servlet</servlet-class>
+    </servlet>
+    <!-- Servlet is mapped to / by default  -->
+    <servlet-mapping>
+        <servlet-name>compojure-war-example</servlet-name>
+        <url-pattern>/*</url-pattern>
+    </servlet-mapping>
+
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
 </web-app>

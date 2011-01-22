@@ -24,9 +24,27 @@
       [:pre
        (with-out-str (pprint r))]]]))
 
+(defn rooms
+  "Display the list of available chats for an api type"
+  [api]
+  (let [rooms (get
+    (client/get (str "http://liftchat.alpha.vmforce.com/api/rooms/" api ".json"))
+    :body)]
+    (html [:html
+           [:head
+            [:title (str "Rooms for api" api)]
+            [:body
+             (map (fn [k] [:li [:a {:href (str "/app/transcript/" api "/" k)} k]]) (keys (read-json rooms false)))
+             ]
+            ]])
+    )
+  )
+
 (defn chat-transcript
   "chat transcript for a room in lifchat"
   [api, room]
+
+
   (let [rooms (get
     (client/get (str "http://liftchat.alpha.vmforce.com/api/rooms/" api ".json"))
     :body)]
