@@ -24,6 +24,20 @@
       [:pre
        (with-out-str (pprint r))]]]))
 
+(defn apilist
+  "Display the list of availabl api types"
+   [r]
+  (html [:html
+         [:head
+          [:title "APIs"]
+          [:body
+           [:li [:a {:href "/app/rooms/jpa"} "JPA"]]
+           [:li [:a {:href "/app/rooms/akka"} "Akka"]]
+           ]
+          ]])
+
+  )
+
 (defn rooms
   "Display the list of available chats for an api type"
   [api]
@@ -32,7 +46,7 @@
     :body)]
     (html [:html
            [:head
-            [:title (str "Rooms for api" api)]
+            [:title (str "Rooms for api " api)]
             [:body
              (map (fn [k] [:li [:a {:href (str "/app/transcript/" api "/" k)} k]]) (keys (read-json rooms false)))
              ]

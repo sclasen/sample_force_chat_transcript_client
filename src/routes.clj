@@ -14,6 +14,8 @@
   (GET "/app/dump" request
     (pages/dump-request request))
 
+  (GET "/app/apilist" request (pages/apilist request))
+
   (GET "/app/rooms/:api" [api] (pages/rooms api))
 
   (GET "/app/transcript/:api/:room" [api,room]
