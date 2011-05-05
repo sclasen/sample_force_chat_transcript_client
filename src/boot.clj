@@ -34,5 +34,10 @@ From a repl:
   []
   (start))
 
+(defn -main
+  "Main"
+  []
+  (start))
+
 
 
