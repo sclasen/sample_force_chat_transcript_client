@@ -1,1 +1,1 @@
-web: lein run -m web
+web: lein run -m boot
